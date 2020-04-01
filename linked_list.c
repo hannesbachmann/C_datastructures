@@ -15,7 +15,7 @@ typedef struct linkedlist {
 
 linkedlist_t *create_emptylist();
 void append(linkedlist_t *mylist, int myvalue);
-void pop(linkedlist_t *mylist, int myindex);
+void remove_element(linkedlist_t *mylist, int myindex);
 int get(linkedlist_t *mylist, int myindex);
 void delete_linkedlist(linkedlist_t *mylist);
 
@@ -28,7 +28,7 @@ int main(){
     append(new_linkedlist, 11);
     append(new_linkedlist, 11);
 
-    pop(new_linkedlist, 1);
+    remove_element(new_linkedlist, 1);
 
     delete_linkedlist(new_linkedlist);
 
@@ -63,7 +63,7 @@ void append(linkedlist_t *mylist, int myvalue){
     mylist->size += 1;
 }
 
-void pop(linkedlist_t *mylist, int myindex){
+void remove_element(linkedlist_t *mylist, int myindex){
     element_t *last_element = mylist->head;
     for (int index = 0; index<(myindex - 1); index++){
         last_element = last_element->next;
