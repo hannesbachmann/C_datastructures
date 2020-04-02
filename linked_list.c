@@ -19,24 +19,6 @@ void remove_element(linkedlist_t *mylist, int myindex);
 int get(linkedlist_t *mylist, int myindex);
 void delete_linkedlist(linkedlist_t *mylist);
 
-int main(){
-    linkedlist_t *new_linkedlist = create_emptylist();
-
-    append(new_linkedlist, 10);
-    append(new_linkedlist, 20);
-    append(new_linkedlist, 11);
-    append(new_linkedlist, 11);
-    append(new_linkedlist, 11);
-
-    remove_element(new_linkedlist, 1);
-
-    delete_linkedlist(new_linkedlist);
-
-    int some_value = get(new_linkedlist, 1);
-    printf("%d hello\n", some_value);
-
-    return 0;
-}
 
 linkedlist_t *create_emptylist(){
     linkedlist_t *newlist_ptr = malloc(sizeof(linkedlist_t));
