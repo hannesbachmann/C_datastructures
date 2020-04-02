@@ -20,25 +20,6 @@ void remove_element(double_linkedlist_t *mylist, int myindex);
 int get(double_linkedlist_t *mylist, int myindex);
 void delete_doublelinkedlist(double_linkedlist_t *mylist);
 
-int main(){
-    double_linkedlist_t *new_doublelinkedlist = create_emptylist();
-
-    append(new_doublelinkedlist, 10);
-    append(new_doublelinkedlist, 20);
-    append(new_doublelinkedlist, 11);
-    append(new_doublelinkedlist, 11);
-    append(new_doublelinkedlist, 11);
-
-    remove_element(new_doublelinkedlist, 1);
-
-    delete_doublelinkedlist(new_doublelinkedlist);
-
-    int some_value = get(new_doublelinkedlist, 1);
-    printf("%d hello\n", some_value);
-
-    return 0;
-}
-
 double_linkedlist_t *create_emptylist(){
     double_linkedlist_t *newlist_ptr = malloc(sizeof(double_linkedlist_t));
     newlist_ptr->size = 0;
