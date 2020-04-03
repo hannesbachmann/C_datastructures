@@ -103,12 +103,19 @@ void delete_bintree(bin_tree_t *mytree){
     free(mytree);
 }
 
-void delete_bintree_element(element_t *root_element){
+void delete_bintree_element(element_t *mainroot, element_t *root_element){
     if (root_element->left_child != NULL){
         delete_bintree(root_element->left_child);
     }else if (root_element->right_child != NULL){
         delete_bintree(root_element->right_child);
     }else{
+        element_t *parent_element = search_for_parent(mainroot, root_element);
+        if (parent_element->right_child == root_element){
+            parent_element->right_child = NULL;
+        }
+        if (parent_element->left_child == root_element){
+            parent_element->left_child = NULL;
+        }
         free(root_element);
     }
 }
